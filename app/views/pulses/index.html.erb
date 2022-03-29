@@ -1,2 +1,9 @@
-<h1>Pulses#index</h1>
-<p>Find me in app/views/pulses/index.html.erb</p>
+
+<div class="container">
+  <% @pulses.each do |pulse| %>
+    <div class="border bg-light p-3 m-3">
+      <h1><%= pulse.user.nickname %></h1>
+      <p><%= pulse.pulse_content %></p>
+    </div>
+  <% end %>
+</div>

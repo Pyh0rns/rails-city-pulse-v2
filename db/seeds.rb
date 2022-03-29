@@ -9,10 +9,10 @@ puts "destroy old users"
 User.destroy_all
 
 puts "create new users"
-felix = User.create!(email: "f@gmail.com", encrypted_password: "azerty", nickname: "Felix")
-manu = User.create!(email: "mm@gmail.com", encrypted_password: "azerty", nickname: "Manu")
-marin = User.create!(email: "m@gmail.com", encrypted_password: "azerty", nickname: "Marin")
-py = User.create!(email: "py@gmail.com", encrypted_password: "azerty", nickname: "Py")
+felix = User.create!(email: "f@gmail.com", password: "azerty", nickname: "Felix")
+manu = User.create!(email: "mm@gmail.com", password: "azerty", nickname: "Manu")
+marin = User.create!(email: "m@gmail.com", password: "azerty", nickname: "Marin")
+py = User.create!(email: "py@gmail.com", password: "azerty", nickname: "Py")
 
 puts "create new pulses"
 # felix

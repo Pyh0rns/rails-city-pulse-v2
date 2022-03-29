@@ -1,21 +1,23 @@
-.top-navbar {
+.down-navbar {
   background: black;
-  justify-content: space-between;
+  width: 100%;
   padding: 2vh;
+  position: fixed;
+  bottom: 0;
 }
 
-.container-top-navbar {
+.container-down-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h1 {
-    color: whitesmoke;
-  }
 
   i {
     color: whitesmoke;
     text-decoration: none !important;
     font-size: 4vh;
   }
+}
+
+.down-navbar .down-navbar-pulse img {
+  width: 40px;
 }
