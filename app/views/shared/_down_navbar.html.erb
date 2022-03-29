@@ -2,7 +2,7 @@
   <div class="container container-down-navbar">
 
   <%# ------------ home -----------------%>
-    <%= link_to "#", class: "down-navbar-item" do %>
+    <%= link_to root_path, class: "down-navbar-item" do %>
       <i class="fas fa-heartbeat"></i>
     <% end %>
 
@@ -11,18 +11,23 @@
       <i class="fas fa-search"></i>
     <% end %>
 
-  <%# ------------ pulse -----------------%>
+  <%# ---------- placeholder -------------%>
+    <%= link_to "#", class: "down-navbar-item mx-4" do %>
+      <i class="fas fa-square" style="color:black;"></i>
+    <% end %>
+
+  <%# ------------ pulse new -------------%>
     <%= link_to "#", class: "down-navbar-pulse" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="">
     <% end %>
 
   <%# ------------- city -----------------%>
-    <%= link_to "#", class: "down-navbar-item" do %>
+    <%= link_to pages_lille_city_path, class: "down-navbar-item" do %>
       <i class="fas fa-building"></i>
     <% end %>
 
   <%# ------------- info -----------------%>
-    <%= link_to "#", class: "down-navbar-item" do %>
+    <%= link_to pages_infos_path, class: "down-navbar-item" do %>
       <i class="fas fa-info-circle"></i>
     <% end %>
   </div>

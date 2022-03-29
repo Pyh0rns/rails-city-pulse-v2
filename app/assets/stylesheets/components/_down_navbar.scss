@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   i {
     color: whitesmoke;
@@ -18,6 +19,17 @@
   }
 }
 
-.down-navbar .down-navbar-pulse img {
-  width: 40px;
+.down-navbar-pulse {
+  position: absolute;
+  // pour que ce soit au dessus
+  z-index: 1;
+  // pour que ça soit au milieu (sauf que c'est le bord de l'image qui sera au milieu)
+  left: 50%;
+  // pour que le centre de l'image soit au milieu
+  transform: translateX(-50%);
+  bottom: 0;
+
+  img {
+      width: 10vh;
+    }
 }
