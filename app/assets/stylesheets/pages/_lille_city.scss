@@ -1,0 +1,28 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  display: flex;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+}
+
+.container-banner-lille{
+  align-self: flex-end;
+}
+
+.credit {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+}
