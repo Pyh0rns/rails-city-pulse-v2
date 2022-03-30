@@ -1,0 +1,36 @@
+
+.container-infos-title {
+  display: flex;
+  flex-direction: column;
+  padding: 3vh;
+
+  h1 {
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 0 auto;
+  }
+}
+
+
+.container-infos-content {
+  margin-bottom: 15vh;
+}
+
+.infos-content-items {
+  padding-bottom: 2vh;
+
+  h2 {
+    padding: 2vh;
+  }
+
+  p {
+    padding: 0 2vh ;
+  }
+}
+
+// pour mettre un background color gris à un element sur 2
+.container-infos-content .infos-content-items:nth-child(2n+1) {
+  background-color: lightgray;
+}
