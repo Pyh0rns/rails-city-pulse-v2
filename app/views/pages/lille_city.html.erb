@@ -8,3 +8,31 @@
 <div class="credit">
   <p>Crédit photo : Unsplash / Geoffroy Hauwen Photographer www.geoffroy-hauwen.com</p>
 </div>
+
+<div class="container container-sondage">
+  <h2>Sondages</h2>
+  <div class="sondage-content border">
+    <h3>Souhaiteriez-vous que ?</h3>
+    <p>Afin de faire ceci cela</p>
+  </div>
+
+  <div class="sondage-content border">
+    <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
+    <p>Afin de faire ceci cela</p>
+  </div>
+</div>
+
+
+<div class="bg-gray">
+  <div class=" container container-top">
+    <h2> Top 3</h2>
+
+    <%# reprendre les cards de l'index une fois finalisées %>
+    <% @pulses.first(3).each do |pulse| %>
+      <div class="border bg-light p-3 m-3">
+        <h3><%= pulse.user.nickname %></h1>
+        <p><%= pulse.pulse_content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
