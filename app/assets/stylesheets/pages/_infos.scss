@@ -15,7 +15,7 @@
 
 
 .container-infos-content {
-  margin-bottom: 15vh;
+  margin-bottom: 8vh;
 }
 
 .infos-content-items {
@@ -31,6 +31,6 @@
 }
 
 // pour mettre un background color gris à un element sur 2
-.container-infos-content .infos-content-items:nth-child(2n+1) {
+.container-infos-content .infos-content-items:nth-child(2n) {
   background-color: lightgray;
 }
