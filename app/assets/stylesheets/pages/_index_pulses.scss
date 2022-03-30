@@ -48,10 +48,14 @@
 }
 
 #pulse-like {
-  padding-left: 2vh;
+  margin-left: 2vh;
 
-  img{
-    width: 7vh;
-    height: 7vh;
+  i {
+    font-size: 30px;
+    padding: 2vh;
+    color: whitesmoke;
+    background-color: red;
+    border-radius: 50%;
+
   }
 }

@@ -29,7 +29,10 @@
   transform: translateX(-50%);
   bottom: 0;
 
-  img {
-      width: 10vh;
-    }
+  i {
+    padding: 2vh 3vh;
+    font-size: 50px;
+    background-color: red;
+    border-radius: 50%;
+  }
 }
