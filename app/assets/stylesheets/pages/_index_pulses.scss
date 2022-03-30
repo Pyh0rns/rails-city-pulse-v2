@@ -1,3 +1,57 @@
 .container-index-pulses {
-  margin-bottom: 12vh;
+  margin-bottom: 8vh;
+  background-color: lightgray;
+  padding: 5vh;
+}
+
+.pulse-content {
+  border: solid;
+  /* vertical | horizontal */
+  margin: 3vh 0;
+  padding: 2vh;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  position: relative;
+}
+
+#user-picto {
+  position: absolute;
+  top: -15px;
+  // top: 0;
+  // transform: translateY(-50%);
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 50px;
+  color: blue;
+  background-color: whitesmoke;
+  border-radius: 50%;
+
+}
+
+.pulse-user-nickname {
+  padding-left: 10%;
+}
+
+.pulse-date {
+  font-size: 10px;
+  font-style: italic;
+}
+
+
+.pulse-content-right {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  transform: translateX(25%);
+}
+
+#pulse-like {
+  padding-left: 2vh;
+
+  img{
+    width: 7vh;
+    height: 7vh;
+  }
 }

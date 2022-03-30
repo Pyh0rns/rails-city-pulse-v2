@@ -1,10 +1,21 @@
 
 <div class="container container-index-pulses">
   <% @pulses.each do |pulse| %>
-  <%# changer le style dans assets/.../pages/index_pulses %>
-    <div class="border bg-light p-3 m-3">
-      <h1><%= pulse.user.nickname %></h1>
-      <p><%= pulse.pulse_content %></p>
+    <div class="pulse-content">
+
+      <div class="pulse-content-left">
+        <i class="fas fa-user-circle" id="user-picto"></i>
+        <h2 class="pulse-user-nickname"><%= pulse.user.nickname %></h2>
+        <p><%= pulse.pulse_content %></p>
+        <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+      </div>
+
+      <div class="pulse-content-right">
+        <h2 class=>112</h2>
+        <%= link_to "#", id:"pulse-like" do %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="">
+      <% end %>
+      </div>
     </div>
   <% end %>
 </div>
