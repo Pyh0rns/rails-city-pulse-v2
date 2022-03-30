@@ -1,6 +1,6 @@
 <div class="bg-index-gray">
   <div class="container container-index-pulses">
-    <% @pulses.each do |pulse| %>
+    <% @pulses.reverse.each do |pulse| %>
       <div class="pulse-content">
 
         <div class="pulse-content-left">
@@ -11,10 +11,18 @@
         </div>
 
         <div class="pulse-content-right">
-          <h2 class=>112</h2>
-          <%= link_to '#', id:"pulse-like" do %>
-            <i class="fas fa-heart"></i>
-        <% end %>
+          <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
+
+          <%# ------- favorites ----------- %>
+          <% if pulse.liked?(current_user)%>
+            <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), id:"pulse-like-red", remote: true, method: :delete do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to pulse_favorites_path(pulse), id:"pulse-like-blue", remote: true, method: :post do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% end %>
         </div>
       </div>
     <% end %>

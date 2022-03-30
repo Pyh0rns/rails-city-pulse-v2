@@ -13,6 +13,7 @@ class PulsesController < ApplicationController
 
     if @pulse.save
       redirect_to root_path
+      flash[:alert] = "C'est pulsé !"
     else
       render :new
     end
