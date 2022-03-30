@@ -1,21 +1,22 @@
+<div class="bg-index-gray">
+  <div class="container container-index-pulses">
+    <% @pulses.each do |pulse| %>
+      <div class="pulse-content">
 
-<div class="container container-index-pulses">
-  <% @pulses.each do |pulse| %>
-    <div class="pulse-content">
+        <div class="pulse-content-left">
+          <i class="fas fa-user-circle" id="user-picto"></i>
+          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %></h2>
+          <p><%= pulse.pulse_content %></p>
+          <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+        </div>
 
-      <div class="pulse-content-left">
-        <i class="fas fa-user-circle" id="user-picto"></i>
-        <h2 class="pulse-user-nickname"><%= pulse.user.nickname %></h2>
-        <p><%= pulse.pulse_content %></p>
-        <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+        <div class="pulse-content-right">
+          <h2 class=>112</h2>
+          <%= link_to '#', id:"pulse-like" do %>
+            <i class="fas fa-heart"></i>
+        <% end %>
+        </div>
       </div>
-
-      <div class="pulse-content-right">
-        <h2 class=>112</h2>
-        <%= link_to "#", id:"pulse-like" do %>
-          <i class="fas fa-heart"></i>
-      <% end %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
