@@ -10,18 +10,22 @@
           <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
         </div>
 
-        <div class="pulse-content-right">
-          <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
+        <div class="pulse-content-right" data-controller="favorites">
+          <h2 id="pulse-count" data-favorites-target="favoritescount"><%= pulse.favorites.count %></h2>
 
           <%# ------- favorites ----------- %>
           <% if pulse.liked?(current_user)%>
-            <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), id:"pulse-like-red", remote: true, method: :delete do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
+            <div data-action="click->favorites#unfav" data-favorites-target="favoritesr">
+              <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), remote: true, class:"pulse-like-red", method: :delete do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            </div>
           <% else %>
-            <%= link_to pulse_favorites_path(pulse), id:"pulse-like-blue", remote: true, method: :post do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
+            <div data-action="click->favorites#fav" data-favorites-target="favoritesb">
+              <%= link_to pulse_favorites_path(pulse), remote: true, class:"pulse-like-blue", method: :post do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
