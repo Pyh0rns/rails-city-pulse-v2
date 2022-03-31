@@ -11,7 +11,7 @@
         </div>
 
         <div class="pulse-content-right" data-controller="favorites">
-          <h2 id="pulse-count" data-favorites-target="favoritescount"><%= pulse.favorites.count %></h2>
+          <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
 
           <%# ------- favorites ----------- %>
           <% if pulse.liked?(current_user)%>
