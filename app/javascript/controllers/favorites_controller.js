@@ -7,7 +7,7 @@ export default class extends Controller {
     console.log("connected");
   }
 
-  unfav() {
+  unfav(event) {
     console.log("unfav");
     event.preventDefault()
 
@@ -19,7 +19,7 @@ export default class extends Controller {
     this.favoritescountTarget.innerText = "0";
   }
 
-  fav() {
+  fav(event) {
     console.log("fav");
     event.preventDefault()
 
