@@ -1,6 +1,8 @@
+ <%# -------------- test turbo-rails ---------------- %>
+<%#= turbo_stream_from @favorite %>
+<%# @pulse.favorites? regarder dans les attributes dans la doc et dans favorites controller%>
+ <%# -------------- test turbo-rails ---------------- %>
 
-<%= turbo_stream_from @pulse %>
-<%# @pulse.favorites? regarder dans les attributes%>
 
 <div id="pulse-content-right-<%=pulse.id%>" class="pulse-content-right" >
   <h2 id="pulse-count"><%= pulse.favorites.count %></h2>

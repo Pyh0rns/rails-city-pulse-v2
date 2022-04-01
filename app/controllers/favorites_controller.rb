@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
     @favorite.user = current_user
     @favorite.save
     # redirect_to root_path
-    @pulse.broadcast_update
+    # @favorite.broadcast_update
   end
 
   def destroy
@@ -14,7 +14,6 @@ class FavoritesController < ApplicationController
     @favorite.destroy
     # redirect_to root_path
     @pulse = Pulse.find(params[:pulse_id])
-    @pulse.broadcast_update
-
+    # @favorite.broadcast_update
   end
 end
