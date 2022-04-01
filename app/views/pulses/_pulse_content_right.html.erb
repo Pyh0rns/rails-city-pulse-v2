@@ -1,15 +1,18 @@
-<div class="pulse-content-right" data-controller="like" data-like-target="pulsecontentrightdiv">
+
+<%= turbo_stream_from @pulse %>
+<%# @pulse.favorites? regarder dans les attributes%>
+
+<div id="pulse-content-right-<%=pulse.id%>" class="pulse-content-right" >
   <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
-  <%# ------- favorites ----------- %>
   <% if pulse.liked?(current_user)%>
     <div >
-      <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), data: {like_target: "btn", action: "click->like#unfav" }, class:"pulse-like-red", method: :delete do %>
+      <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), class:"pulse-like-red", method: :delete do %>
         <i class="fas fa-heart"></i>
       <% end %>
     </div>
   <% else %>
     <div>
-      <%= link_to pulse_favorites_path(pulse), data: {like_target: "btn", action: "click->like#fav"}, class:"pulse-like-blue", method: :post do %>
+      <%= link_to pulse_favorites_path(pulse), class:"pulse-like-blue", method: :post do %>
         <i class="fas fa-heart"></i>
       <% end %>
     </div>
