@@ -6260,6 +6260,11 @@ stimulus-remote-rails@^4.0.0:
   resolved "https://registry.yarnpkg.com/stimulus-remote-rails/-/stimulus-remote-rails-4.0.0.tgz#64661e662831e0487289c7bea0b8a06c8b67c9a8"
   integrity sha512-N50b3FoFhoYXKDEepNwHHk5IVLucXdPq/E/tX9MK4IJRysYZdyrkCLj0AyIhmvaI27YlXvyHZtIEJ2MZgz8QJw==
 
+stimulus-scroll-to@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-scroll-to/-/stimulus-scroll-to-4.0.0.tgz#433a726d37c76762d80b2e30a619bff116408608"
+  integrity sha512-/2qWiC/F2D0l1+FnOL1spTH9H6g/P5e1j/N7Ei2sgZ2/621l+t1qLzrWfHhrHDdmKAq3HlFFxNY6YEMC1jpVRw==
+
 stimulus@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-3.0.1.tgz#370e3054eb3b8068904af1888949821255d375d3"

@@ -1,0 +1,17 @@
+<div class="pulse-content-right" data-controller="like" data-like-target="pulsecontentrightdiv">
+  <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
+  <%# ------- favorites ----------- %>
+  <% if pulse.liked?(current_user)%>
+    <div >
+      <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), data: {like_target: "btn", action: "click->like#unfav" }, class:"pulse-like-red", method: :delete do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to pulse_favorites_path(pulse), data: {like_target: "btn", action: "click->like#fav"}, class:"pulse-like-blue", method: :post do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
