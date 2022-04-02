@@ -1,47 +1,37 @@
 import { Controller } from "@hotwired/stimulus"
-import { csrfToken } from "@rails/ujs" // pas sur d'avoir besoin
+import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = ["counter", "btn"]
-
-  connect() {
-    console.log("like controller connected");
-    // console.log(this.counterTarget)
-  }
+  static targets = ["divtochange", "btnfav", "btnunfav"]
 
   fav(event) {
-    event.preventDefault();
-    // -------- tests ---------
-    // console.log("fav")
-    // console.log("target", this.counterTarget)
-    // console.log("btn", this.btnTarget)
-    // console.log("btn", this.btnTarget.href) -----> yeah!! un lien => http://localhost:3000/pulses/16/favorites
+    event.preventDefault(); // pas besoin mais on sait jamais
 
-    // -------- fetch ---------
+    const url = this.btnfavTarget.href
 
-    // d'abord définir l'url
-    const url = this.btnTarget.href
-
-    // changer la valeur du counter
     fetch(url, {
       method: "POST",
       headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
-      // body: new FormData(this.formTarget)
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        this.divtochangeTarget.innerHTML = data.inserted_item;
       })
-  }
-
-
-
-
-
-
+ }
 
   unfav(event) {
     event.preventDefault();
+
+    const url = this.btnunfavTarget.href
+
+    fetch(url, {
+      method: "DELETE",
+      headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        this.divtochangeTarget.innerHTML = data.inserted_item;
+      })
 
 
   }
