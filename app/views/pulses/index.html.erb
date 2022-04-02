@@ -10,7 +10,29 @@
           <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
         </div>
 
-        <%= render "pulse_content_right", pulse: pulse %>
+
+    <%# # -------------- test turbo-rails ---------------- %>
+
+        <%#= turbo_stream_from(????) %>
+
+        <%#= turbo_stream_from(Pulse.find(pulse.id)) -> nop %>
+        <%#= turbo_stream_from Favorite, :pulses -> nop %>
+        <%#= turbo_stream_from Pulse, :pulses -> nop %>
+        <%#= turbo_stream_from current_user, :pulses -> nop %>
+        <%#= turbo_stream_from Current.account, :pulses -> nop %>
+        <%# turbo_stream_from pulse -> nop %>  <%# turbo_stream_from pulse, :pulses -> nop %>
+        <%# turbo_stream_from @pulse -> nop %>  <%# turbo_stream_from @pulse, :pulses -> nop %>
+
+        <%# changer par favorite?? %>
+
+        <div id="<%= dom_id(pulse) %>">
+          <%= render "pulse_content_right", pulse: pulse %>
+        </div>
+
+    <%# # -------------- test turbo-rails ---------------- %>
+
+
+
 
       </div>
     <% end %>
