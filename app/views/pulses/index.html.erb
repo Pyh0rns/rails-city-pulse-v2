@@ -10,13 +10,8 @@
           <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
         </div>
 
-
-    <%# # -------------- test AJAX ---------------- %>
-
-
-            <%= render "pulse_content_right", pulse: pulse %>
-
-    <%# # -------------- test AJAX ---------------- %>
+        <%# # ------ div (partial) qui se refresh quand on like ------ %>
+        <%= render "pulse_content_right", pulse: pulse %>
 
       </div>
     <% end %>

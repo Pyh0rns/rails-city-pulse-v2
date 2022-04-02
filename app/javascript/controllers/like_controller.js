@@ -20,8 +20,7 @@ export default class extends Controller {
  }
 
   unfav(event) {
-    event.preventDefault();
-
+    event.preventDefault(); // pas besoin mais on sait jamais
     const url = this.btnunfavTarget.href
 
     fetch(url, {
@@ -30,6 +29,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         this.divtochangeTarget.innerHTML = data.inserted_item;
       })
 
