@@ -2,13 +2,31 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new
     @pulse = Pulse.find(params[:pulse_id])
-    # j'arrive bien a trouver le pulse donc je peux faire un @pulse.broadcast_update?
     @favorite.pulse = @pulse
     @favorite.user = current_user
     @favorite.save
+
+    # -------------- test AJAX ------------------
+    # respond_to do |format|
+    #   @favorite.save
+    #   format.html { redirect_to root_path }
+    #   format.json # Follow the classic Rails flow and look for a create.json view
+    # end
+
+
+
+
+
+
+
+
     # redirect_to root_path
 
     # -------------- test turbo-rails ----------------
+    # @favorite.broadcast_replace("favorite")
+    # @favorite.broadcast_replace_later_to("players")
+
+
 
     # @favorite.broadcast_update@
     # @pulse.broadcast_update
