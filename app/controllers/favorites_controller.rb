@@ -16,6 +16,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find(params[:id])
     # @favorite.destroy
+    @pulse = Pulse.find(@favorite.pulse.id)
 
     respond_to do |format|
       @favorite.destroy

@@ -9,7 +9,7 @@
               <% if pulse.liked?(current_user)%>
                 <%# pour unliker : coeur rouge vers bleu %>
 
-                <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), method: :delete, data: {action: "click->like#unfav", like_target: "btnunfav" }, class:"pulse-like-red" do %>
+                <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), data: {action: "click->like#unfav", like_target: "btnunfav" }, class:"pulse-like-red" do %>
                   <i class="fas fa-heart"></i>
                 <% end %>
 

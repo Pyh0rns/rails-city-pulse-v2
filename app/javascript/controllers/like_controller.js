@@ -29,7 +29,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
         this.divtochangeTarget.innerHTML = data.inserted_item;
       })
 
