@@ -1,21 +1,8 @@
 class PulsesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
   def index
     @pulses = Pulse.all
-    # -------------- test turbo-rails ----------------
-    # @pulse = Favorite.find(params[:id].pulse) # Pulse.find(params[:id]) #pas sur sinon =
-    # if @pulse.liked?
-    #   @favorite = Favorite.find(params[:id])
-    # else
-    #   @favorite = Favorite.new
-    # end
-    # -------------- test turbo-rails ----------------
-
-    # unless params[:pulse_id].nil?
-    #   @pulse = Pulse.find(params[:pulse_id])
-    #   @favorites = Favorite.where(pulse_id: @pulse)
-    #   @pulse.broadcast_replace
-    # end
-
   end
 
   def new
