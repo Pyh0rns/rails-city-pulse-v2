@@ -6,20 +6,15 @@
             <div id="div-<%= pulse.id %>" class="pulse-content-right" >
               <h2 id="pulse-count"><%= pulse.favorites.count %></h2>
 
+              <% if !user_signed_in? %>
+                <%# si pas login : coeur gris et inactif %>
+                <i class="fas fa-heart pulse-like-gray"></i>
 
-
-              <% if pulse.liked?(current_user)%>
+              <% elsif pulse.liked?(current_user)%>
                 <%# pour unliker : coeur rouge vers bleu %>
-
                 <%= link_to favorite_path(pulse.favorites.find_by(user_id: current_user).id), data: {action: "click->like#unfav", like_target: "btnunfav" }, class:"pulse-like-red" do %>
                   <i class="fas fa-heart"></i>
                 <% end %>
-
-
-                <%# , method: :delete %>
-                <%# retirer le method delete quand plus de pb js %>
-
-
 
               <% else %>
                 <%# pour liker lorsque ce n'était pas le cas : coeur bleu vers rouge %>
