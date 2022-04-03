@@ -5,7 +5,7 @@
 
         <div class="pulse-content-left">
           <i class="fas fa-user-circle" id="user-picto"></i>
-          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %></h2>
+          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %>  <span class="pulse-title">titre</span> </h2>
           <p><%= pulse.pulse_content %></p>
           <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
         </div>
