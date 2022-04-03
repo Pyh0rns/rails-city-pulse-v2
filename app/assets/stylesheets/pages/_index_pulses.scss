@@ -1,7 +1,7 @@
-.bg-index-gray {
-  background-color: lightgray;
-
-}
+.bg-body-index { // test bg color
+//   background-color: lightgray;
+  background: $cp-black;
+ }
 
 .container-index-pulses {
   margin-bottom: 8vh;
@@ -26,7 +26,7 @@
   left: 0;
   transform: translateX(-50%);
   font-size: 50px;
-  color: blue;
+  color: $cp-blue;
   background-color: whitesmoke;
   border-radius: 50%;
 
@@ -40,7 +40,6 @@
   font-size: 10px;
   font-style: italic;
 }
-
 
 .pulse-content-right {
   display: flex;
@@ -60,8 +59,9 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    background-color: red;
+    // background-color: red;
     border-radius: 50%;
+    background: $cp-pink-gradient;
 
   }
 }
@@ -72,8 +72,18 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    background-color: blue;
+    // background-color: blue;
+    background: $cp-blue-gradient;
     border-radius: 50%;
 
   }
+}
+
+.pulse-like-gray {
+
+    font-size: 30px;
+    padding: 2vh;
+    color: whitesmoke;
+    background-color: gray;
+    border-radius: 50%;
 }
