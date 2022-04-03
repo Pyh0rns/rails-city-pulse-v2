@@ -10,6 +10,12 @@ class PulsesController < ApplicationController
     # end
     # -------------- test turbo-rails ----------------
 
+    # unless params[:pulse_id].nil?
+    #   @pulse = Pulse.find(params[:pulse_id])
+    #   @favorites = Favorite.where(pulse_id: @pulse)
+    #   @pulse.broadcast_replace
+    # end
+
   end
 
   def new

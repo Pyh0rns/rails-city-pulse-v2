@@ -1,48 +1,37 @@
 import { Controller } from "@hotwired/stimulus"
-
+import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = ["pulsecontentrightdiv", "btn"]
-
-  connect() {
-    console.log("like controller connected");
-  }
+  static targets = ["divtochange", "btnfav", "btnunfav"]
 
   fav(event) {
-    event.preventDefault();
+    event.preventDefault(); // pas besoin mais on sait jamais
 
-    // console.log("div", this.pulsecontentrightdivTarget.dataset)
-    // console.log("btn", this.btnTarget.dataset)
-    console.log("btn", this.btnTarget.dataset);
+    const url = this.btnfavTarget.href
 
-
-    // fetch(this.btnTarget.action, {
-    //   method: "POST",
-    //   headers: { "Accept": "application/json" },
-    // })
-    //   .then(response => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //   })
-
-  }
+    fetch(url, {
+      method: "POST",
+      headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        this.divtochangeTarget.innerHTML = data.inserted_item;
+      })
+ }
 
   unfav(event) {
-    event.preventDefault();
+    event.preventDefault(); // pas besoin mais on sait jamais
+    const url = this.btnunfavTarget.href
 
-    // console.log("div", this.pulsecontentrightdivTarget.dataset);
-    console.log("btn", this.btnTarget.dataset.pathAction);
+    fetch(url, {
+      method: "DELETE",
+      headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        this.divtochangeTarget.innerHTML = data.inserted_item;
+      })
 
-    // fetch(this.btnTarget.action, {
-    //   method: "DELETE",
-    //   headers: { "Accept": "application/json" },
-    // })
-    //   .then(response => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //   })
 
   }
-
-
 }
