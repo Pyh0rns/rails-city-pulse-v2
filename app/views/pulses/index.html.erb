@@ -17,3 +17,7 @@
     <% end %>
   </div>
 </div>
+
+<% unless user_signed_in? %>
+  <%= flash[:alert] = link_to "Se connecter pour voter ou pulser!", new_user_session_path %>
+<% end %>
