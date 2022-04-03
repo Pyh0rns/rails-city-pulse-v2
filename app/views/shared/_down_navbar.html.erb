@@ -1,4 +1,11 @@
-<div class="down-navbar">
+
+
+<div class="down-navbar" data-controller="search-appear" >
+
+  <div data-search-appear-target="searchdiv" class="searchbar d-none bg-light mb-5 ">
+    <h2>Searchbar...</h2>
+  </div>
+
   <div class="container container-down-navbar">
 
   <%# ------------ home -----------------%>
@@ -7,9 +14,9 @@
     <% end %>
 
   <%# ------------ search ----------------%>
-    <%= link_to "#", class: "down-navbar-item" do %>
+    <div id="search-icon" class="down-navbar-item" data-search-appear-target="loupe" data-action="click->search-appear#search">
       <i class="fas fa-search"></i>
-    <% end %>
+    </div>
 
   <%# ---------- placeholder -------------%>
     <%= link_to "#", class: "down-navbar-item mx-4" do %>
