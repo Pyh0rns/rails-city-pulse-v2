@@ -2,8 +2,14 @@
 
 <div class="down-navbar" data-controller="search-appear" >
 
-  <div data-search-appear-target="searchdiv" class="searchbar d-none bg-light mb-5 ">
-    <h2>Searchbar...</h2>
+  <div data-search-appear-target="searchdiv" class="searchbar d-none">
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        id: "searchbar-text-field",
+        placeholder: "Trouve un Pulse ou un utilisateur 🔍" %>
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
+    <% end %>
   </div>
 
   <div class="container container-down-navbar">

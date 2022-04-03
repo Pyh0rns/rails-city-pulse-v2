@@ -2,7 +2,14 @@ class PulsesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @pulses = Pulse.all
+    # @pulses = Pulse.all
+
+    # <--------- SEARCHBAR ---------->
+    if params[:query].present?
+      @pulses = Pulse.global_search("#{params[:query]}")
+    else
+      @pulses = Pulse.all
+    end
   end
 
   def new

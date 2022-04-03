@@ -41,3 +41,14 @@
 #search-icon {
   cursor: pointer;
 }
+
+.searchbar {
+  margin-bottom: 7vh;
+
+  #searchbar-text-field {
+    width: 70%;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    padding: 0.5vh;
+  }
+}
