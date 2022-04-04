@@ -16,4 +16,5 @@ class Pulse < ApplicationRecord
   pg_search_scope :global_search, against: [:pulse_content],
   using: { tsearch: { prefix: true } },
   associated_against: { user: [ :nickname ] }
+
 end
