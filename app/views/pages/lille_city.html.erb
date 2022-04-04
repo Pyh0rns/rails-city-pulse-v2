@@ -54,25 +54,7 @@
 </div>
 
 
-
-
-
-
 <div class="container container-autres">
   <h3>Autre chose?</h3>
-  <h3>Vrai top 3 des pulses</h3>
-  <p>si égalité: tri par date</p>
-  <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
-  <% top.reverse.first(3).each do |pulse| %>
-    <p> <%= pulse.user.nickname %> </p>
-    <p> <%= pulse.pulse_content %> </p>
-  <% end %>
-
-  <h3>Vrai top 3 des categories</h3>
-  <p>trié par : le plus de pulse qui ont cette catégorie. </p>
-  <% top = @categories.sort_by { |category| category.pulses.count } %>
-  <% top.reverse.first(3).each do |category| %>
-    <p> <%= category.name %> </p>
-    <p> <%= sanitize category.picto %> </p>
-  <% end %>
+  <p>???</p>
 </div>
