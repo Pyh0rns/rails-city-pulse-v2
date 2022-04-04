@@ -11,7 +11,7 @@ class Category < ApplicationRecord
   #   when "culture"
   #     "<i class='fas fa-theater-masks'></i>"
   #   when "transports"
-  #     "<i class='fas fa-bus-school'></i>"
+  #     "<i class='fas fa-bus'></i>"
   #   when "urbanisme"
   #     "<i class='fas fa-city'></i>"
   #   # else

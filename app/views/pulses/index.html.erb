@@ -10,7 +10,15 @@
          <%#= pulse.categories.first.nil? ? "" : test(pulse.categories.first.name) %>
 
           <p><%= pulse.pulse_content %></p>
-          <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+          <div class="d-flex">
+            <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+            <div class="pulse-categories">
+            <%# a remplacer parles vraies categories %>
+              <i class='fas fa-leaf ms-5'></i>
+              <i class='fas fa-theater-masks ms-2'></i>
+              <i class='fas fa-bus ms-2'></i>
+            </div>
+          </div>
         </div>
 
         <%# # ------ div (partial) qui se refresh quand on like ------ %>

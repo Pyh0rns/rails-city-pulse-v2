@@ -20,6 +20,9 @@ py = User.create!(email: "py@gmail.com", password: "azerty", nickname: "Py")
 
 puts "create new categories"
 category1 = Category.create!(name: "écologie")
+category2 = Category.create!(name: "culture")
+category3 = Category.create!(name: "transports")
+category4 = Category.create!(name: "urbanisme")
 
 puts "create new pulses"
 # felix
@@ -45,5 +48,7 @@ pulse12 = Pulse.create!(user_id: py.id, pulse_content: "Perspiciatis unde omnis 
 puts "create new pulse categories"
 pulsecategory1 = PulseCategory.create!(pulse_id: pulse1.id, category_id: category1.id)
 pulsecategory2 = PulseCategory.create!(pulse_id: pulse12.id, category_id: category1.id)
+pulsecategory3 = PulseCategory.create!(pulse_id: pulse12.id, category_id: category2.id)
+
 
 puts "all done"
