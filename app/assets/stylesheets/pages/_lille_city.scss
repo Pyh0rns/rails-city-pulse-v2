@@ -47,6 +47,7 @@
     font-size: 20px;
     background: $cp-pink-gradient;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 3vh;
   }
