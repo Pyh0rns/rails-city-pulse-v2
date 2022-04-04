@@ -44,10 +44,11 @@
     <div class="top-pulses">
 
     <%# reprendre les cards de l'index une fois finalisées %>
-      <% @pulses.first(3).each do |pulse| %>
-        <h3><%= pulse.user.nickname %></h1>
-        <p><%= pulse.pulse_content %></p>
-      <% end %>
+    <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
+    <% top.reverse.first(3).each do |pulse| %>
+      <p> <%= pulse.user.nickname %> </p>
+      <p> <%= pulse.pulse_content %> </p>
+    <% end %>
     </div>
   </div>
 </div>
