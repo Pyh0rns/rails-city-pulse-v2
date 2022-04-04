@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container my-5">
   <h2>Sign up</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,7 +9,6 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-
 
       <%= f.input :nickname, required: true %>
 

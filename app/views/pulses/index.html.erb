@@ -5,12 +5,19 @@
 
         <div class="pulse-content-left">
           <i class="fas fa-user-circle" id="user-picto"></i>
-          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %>  <span class="pulse-title">titre</span> </h2>
-
-         <%#= pulse.categories.first.nil? ? "" : test(pulse.categories.first.name) %>
-
+          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
           <p><%= pulse.pulse_content %></p>
-          <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+
+
+          <%# revoir le css de cette partie pour enlever bootstrap %>
+          <div class="d-flex">
+            <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+            <div class="ms-5 pulse-categories d-flex">
+              <% pulse.categories.limit(3).each do |category| %>
+                <p class="ms-2"> <%= sanitize category.picto %> </p>
+              <% end %>
+            </div>
+          </div>
         </div>
 
         <%# # ------ div (partial) qui se refresh quand on like ------ %>
@@ -21,6 +28,7 @@
   </div>
 </div>
 
+<%# regler ce pb de flash %>
 <% unless user_signed_in? %>
   <%= flash[:alert] = link_to "Se connecter pour voter ou pulser!", new_user_session_path %>
 <% end %>
