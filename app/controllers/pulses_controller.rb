@@ -28,6 +28,7 @@ class PulsesController < ApplicationController
           @pulse_categories = PulseCategory.new
           @pulse_categories.category = Category.find(id)
           @pulse_categories.pulse = @pulse
+          @pulse_categories.save
         end
         redirect_to root_path
         flash[:alert] = "C'est pulsé !"
