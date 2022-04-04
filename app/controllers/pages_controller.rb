@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def lille_city
     @pulses = Pulse.all
+    @categories = Category.all
   end
 
   def infos
