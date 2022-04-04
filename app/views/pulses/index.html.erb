@@ -5,18 +5,17 @@
 
         <div class="pulse-content-left">
           <i class="fas fa-user-circle" id="user-picto"></i>
-          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %>  <span class="pulse-title">titre</span> </h2>
-
-         <%#= pulse.categories.first.nil? ? "" : test(pulse.categories.first.name) %>
-
+          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
           <p><%= pulse.pulse_content %></p>
+
+
+          <%# revoir le css de cette partie pour enlever bootstrap %>
           <div class="d-flex">
             <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
-            <div class="pulse-categories">
-            <%# a remplacer parles vraies categories %>
-              <i class='fas fa-leaf ms-5'></i>
-              <i class='fas fa-theater-masks ms-2'></i>
-              <i class='fas fa-bus ms-2'></i>
+            <div class="ms-5 pulse-categories d-flex">
+              <% pulse.categories.limit(3).each do |category| %>
+                <p class="ms-2"> <%= sanitize category.picto %> </p>
+              <% end %>
             </div>
           </div>
         </div>

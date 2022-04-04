@@ -1,9 +1,7 @@
 <div class="form-new">
   <%= simple_form_for(@pulse) do |f| %>
     <%= f.input :pulse_content %>
-
-    <%# --------ajouter les catégories--------- %>
-    <%#= f.input :qqch %>
+    <%= f.association :categories, include_hidden: false, required: true %>
 
     <%# -------- changer le bouton --------- %>
     <%= f.submit class: "btn btn-success" %>
