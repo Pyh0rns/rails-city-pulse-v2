@@ -9,35 +9,52 @@
   <p>Crédit photo : Unsplash / Geoffroy Hauwen Photographer www.geoffroy-hauwen.com</p>
 </div>
 
-<div class="container container-sondage">
-  <h2>Sondages</h2>
-  <div class="sondage-content border">
-    <h3>Souhaiteriez-vous que ?</h3>
-    <p>Afin de faire ceci cela</p>
+<div class="lille-city-bg-black">
+  <div class="container container-categories">
+    <h2>Thématiques les plus populaires</h2>
+    <%# ajouter le nb de pulse par category? %>
+    <div class="top-categories">
+      <% top = @categories.sort_by { |category| category.pulses.count } %>
+      <% top.reverse.first(3).each do |category| %>
+        <div class="top-category">
+          <p> <%= category.name %> </p>
+          <p> <%= sanitize category.picto %> </p>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="sondage-content border">
-    <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
-    <p>Afin de faire ceci cela</p>
+  <div class="container container-sondage">
+    <div class="sondages">
+      <h2>Sondages</h2>
+      <div class="sondage-content border">
+        <h3>Souhaiteriez-vous que ?</h3>
+        <p>Afin de faire ceci cela</p>
+      </div>
+
+      <div class="sondage-content border">
+        <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
+        <p>Afin de faire ceci cela</p>
+      </div>
+    </div>
   </div>
-</div>
 
-
-<div class="bg-gray">
-  <div class=" container container-top">
-    <h2> Top 3</h2>
+  <div class=" container container-top-pulses">
+    <h2> Pulses les plus populaires </h2>
+    <div class="top-pulses">
 
     <%# reprendre les cards de l'index une fois finalisées %>
-    <% @pulses.first(3).each do |pulse| %>
-      <div class="border bg-light p-3 m-3">
-        <h3><%= pulse.user.nickname %></h1>
-        <p><%= pulse.pulse_content %></p>
-      </div>
-    <% end %>
+      <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
+      <% top.reverse.first(3).each do |pulse| %>
+        <h3> <%= pulse.user.nickname %> </h3>
+        <p> <%= pulse.pulse_content %> </p>
+      <% end %>
+    </div>
   </div>
 </div>
 
 
 <div class="container container-autres">
   <h3>Autre chose?</h3>
+  <p>???</p>
 </div>

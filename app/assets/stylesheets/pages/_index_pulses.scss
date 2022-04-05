@@ -9,12 +9,14 @@
 }
 
 .pulse-content {
-  border: solid;
+  color: whitesmoke;
+  border-top: 2px solid;
+  border-color: whitesmoke;
   /* vertical | horizontal */
   margin: 3vh 0;
   padding: 2vh;
-  background-color: whitesmoke;
-  border-radius: 8px;
+  // background-color: whitesmoke;
+  // border-radius: 8px;
   position: relative;
 }
 
@@ -32,8 +34,19 @@
 
 }
 
+.pulse-nickname-and-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .pulse-user-nickname {
   padding-left: 10%;
+  background: $cp-pink-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 .pulse-date {
@@ -45,7 +58,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: -15px;
+  bottom: 0;
   right: 0;
   transform: translateX(25%);
   #pulse-count {

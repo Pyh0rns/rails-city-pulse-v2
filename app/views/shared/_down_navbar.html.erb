@@ -1,4 +1,17 @@
-<div class="down-navbar">
+
+
+<div class="down-navbar" data-controller="search-appear" >
+
+  <div data-search-appear-target="searchdiv" class="searchbar d-none">
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        id: "searchbar-text-field",
+        placeholder: "Trouve un Pulse ou un utilisateur 🔍" %>
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+
   <div class="container container-down-navbar">
 
   <%# ------------ home -----------------%>
@@ -7,9 +20,9 @@
     <% end %>
 
   <%# ------------ search ----------------%>
-    <%= link_to "#", class: "down-navbar-item" do %>
+    <div id="search-icon" class="down-navbar-item" data-search-appear-target="loupe" data-action="click->search-appear#search">
       <i class="fas fa-search"></i>
-    <% end %>
+    </div>
 
   <%# ---------- placeholder -------------%>
     <%= link_to "#", class: "down-navbar-item mx-4" do %>
