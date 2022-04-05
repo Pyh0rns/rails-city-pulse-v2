@@ -34,12 +34,19 @@
 
 }
 
+.pulse-nickname-and-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .pulse-user-nickname {
   padding-left: 10%;
   background: $cp-pink-gradient;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
 }
 
 .pulse-date {
