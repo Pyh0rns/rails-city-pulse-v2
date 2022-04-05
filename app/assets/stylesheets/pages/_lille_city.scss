@@ -55,6 +55,17 @@
 
 }
 
+
+.container-categories h2 {
+      background: $cp-pink-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+
+
 .top-categories {
   display: flex;
   border-bottom: 2px solid;
