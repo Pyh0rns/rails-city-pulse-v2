@@ -41,6 +41,7 @@ class PulsesController < ApplicationController
   def destroy
     @pulse = Pulse.find(params[:id])
     @pulse.destroy
+    redirect_to root_path
   end
 
   private

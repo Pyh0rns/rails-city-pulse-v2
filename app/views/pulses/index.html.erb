@@ -5,9 +5,15 @@
 
         <div class="pulse-content-left">
           <i class="fas fa-user-circle" id="user-picto"></i>
-          <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
+          <div class="pulse-nickname-and-delete">
+            <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
+            <% if current_user == pulse.user %>
+              <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            <% end %>
+          </div>
           <p><%= pulse.pulse_content %></p>
-
 
           <%# revoir le css de cette partie pour enlever bootstrap %>
           <div class="d-flex">
