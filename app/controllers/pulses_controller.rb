@@ -39,6 +39,8 @@ class PulsesController < ApplicationController
   end
 
   def destroy
+    @pulse = Pulse.find(params[:id])
+    @pulse.destroy
   end
 
   private
