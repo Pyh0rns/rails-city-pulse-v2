@@ -1,14 +1,15 @@
-<%# <div class="container container-infos-title">
-  <h1>Le principe de City Pulse</h1>
-  <p>Principales informations et fonctionnalités à venir</p>
-</div> %>
 
 <div class="container-infos-content">
-  <div class="infos-content-items">
-    <div class="container">
-      <h2>Le principe</h2>
-      <p>City Pulse vous permet de proposer vos idées pour la ville, et de voter pour les idées qui vous plaisent.</p>
-      <p>L'idée est donc de faire remonter les idées les plus populaires à la mairie, et d'établir un dialogue entre les citoyens et la mairie.</p>
+  <div class="container">
+    <div class="infos-content-items d-flex">
+      <div>
+        <h2>Le principe</h2>
+        <p>City Pulse vous permet de proposer vos idées pour la ville, et de voter pour les idées qui vous plaisent.</p>
+        <p>L'idée est donc de faire remonter les idées les plus populaires à la mairie, et d'établir un dialogue entre les citoyens et la mairie.</p>
+      </div>
+      <div class="image">
+        <%= image_tag "hooked.svg", id:"hooked" %>
+      </div>
     </div>
   </div>
 
@@ -54,11 +55,16 @@
     </div>
   </div>
 
-  <div class="infos-content-items">
-    <div class="container">
-      <h2>Contact</h2>
-      <p> Si vous souhaitez nous faire part de vos retours ou participer au projet, n'hésitez pas à nous envoyer un mail : <br>
+  <div class="infos-content-items d-flex">
+    <div class="container d-flex">
+      <div>
+        <h2>Contact</h2>
+        <p> Si vous souhaitez nous faire part de vos retours ou participer au projet, n'hésitez pas à nous envoyer un mail : <br>
       city-pulse@gmail.com</p>
+      </div>
+      <div class="image">
+        <%= image_tag "discuss.svg", id:"discuss" %>
+      </div>
     </div>
   </div>
 </div>
