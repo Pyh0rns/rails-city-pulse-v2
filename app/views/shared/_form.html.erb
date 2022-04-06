@@ -1,5 +1,6 @@
 <div class="form-new">
   <%= simple_form_for(@pulse) do |f| %>
+    <p class="mb-0"> <small> N'hésite pas à bien détailler ton idée !</small></p>
     <%= f.input :pulse_content, as: :text %>
     <div class="w-50 my-5">
     <%= f.association :categories, include_hidden: false, required: true %>
