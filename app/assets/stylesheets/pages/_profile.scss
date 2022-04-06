@@ -1,6 +1,8 @@
 .bg-body-profile {
   background: $cp-black;
-  padding-bottom: 15vh;
+  // pour que la page soit noire jusqu'en bas si jamais pulse donc pas de top 3
+  // A changer plus tard
+  padding-bottom: 40vh;
 }
 
 .container-profile {
