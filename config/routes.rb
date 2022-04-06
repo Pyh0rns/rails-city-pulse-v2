@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get 'pages/infos'
 
 
-  resources :users, only: [:update]
+  resources :users, only: [:edit, :update]
 end
