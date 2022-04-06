@@ -12,6 +12,8 @@
                     input_html: { autocomplete: "email" }%>
 
         <%= f.input :nickname, required: true %>
+        <%= f.input :photo, as: :file %>
+
 
         <%= f.input :password,
                     required: true,
