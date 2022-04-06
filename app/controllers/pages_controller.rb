@@ -10,6 +10,8 @@ class PagesController < ApplicationController
   def lille_city
     @pulses = Pulse.all
     @categories = Category.all
+    @users = User.all
+    @favorites = Favorite.all
   end
 
   def infos

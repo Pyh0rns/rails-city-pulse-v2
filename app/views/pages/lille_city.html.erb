@@ -25,32 +25,47 @@
       </div>
     </div>
 
+
+
+
+
+
+
+
     <div class="container-top-pulses">
       <h2> Pulses les plus populaires </h2>
       <div class="top-pulses pb-3">
 
-      <%# reprendre les cards de l'index une fois finalisées %>
         <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
         <% top.reverse.first(3).each do |pulse| %>
-        <%= render "pulses/pulse", pulse: pulse %>
-
+        <%# ------------------ la partial est ici !! ----------------- %>
+          <%= render "pulses/pulse", pulse: pulse %>
         <% end %>
       </div>
     </div>
 
 
 
+
     <div class="container-sondage">
-      <div class="sondages">
+      <div class="sondages pb-3">
         <h2>Sondages</h2>
         <div class="sondage-content border">
-          <h3>Souhaiteriez-vous que ?</h3>
-          <p>Afin de faire ceci cela</p>
+          <h3>Souhaiteriez-vous que la ville puisse vous proposer des sondages ?</h3>
+          <div class="d-flex">
+            <button class="btn-sign w-100 me-2">oui</button>
+            <button class="btn-sign w-100 ms-2">non</button>
+          </div>
         </div>
 
         <div class="sondage-content border">
           <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
-          <p>Afin de faire ceci cela</p>
+          <div class="d-flex">
+            <button class="btn-sign w-100 me-2">Celui-ci</button>
+            <button class="btn-sign w-100 ms-2">Celui-là</button>
+            <button class="btn-sign w-100 ms-2">Un autre</button>
+
+          </div>
         </div>
       </div>
     </div>
@@ -58,12 +73,13 @@
     <div class="container-projets-realises">
       <div class="projets-realises py-5">
         <h2>Projets réalisés</h2>
-        <div class="projet-content">
-          <h3>Souhaiteriez-vous que ?</h3>
-          <p>Afin de faire ceci cela</p>
+        <div class="projet-content pb-5">
+          <h3>Les projets réalisés grâce à City Pulse</h3>
+          <p>Voici la liste</p>
         </div>
       </div>
     </div>
+
 
   </div>
 </div>
