@@ -34,6 +34,19 @@
 
 }
 
+.profile-pic {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+
+
 .pulse-delete {
   position: absolute;
   top: 2vh;
