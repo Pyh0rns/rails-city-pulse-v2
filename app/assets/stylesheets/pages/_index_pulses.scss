@@ -1,12 +1,11 @@
-.bg-body-index { // test bg color
-//   background-color: lightgray;
-  background: $cp-black;
+
+.bg-body-index {
+    background: $cp-black;
     // pour que le bg reste de la même couleur si recherche sans résultats
     padding-bottom: 75vh;
  }
 
 .container-index-pulses {
-  margin-bottom: 8vh;
   padding: 5vh;
 }
 
@@ -16,16 +15,14 @@
   border-color: whitesmoke;
   border-radius: 4px;
   /* vertical | horizontal */
-  margin: 3vh 0;
+  margin: 5vh 0;
   padding: 2vh;
-  // background-color: whitesmoke;
-  // border-radius: 8px;
   position: relative;
 }
 
 #user-picto {
   position: absolute;
-  top: 0px;
+  top: -10px;
   // top: 0;
   // transform: translateY(-50%);
   left: 0;
@@ -36,11 +33,6 @@
   border-radius: 50%;
 
 }
-
-// .pulse-nickname-and-categories {
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .pulse-delete {
   position: absolute;
@@ -66,7 +58,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   right: 0;
   transform: translateX(25%);
   #pulse-count {
@@ -80,7 +72,6 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    // background-color: red;
     border-radius: 50%;
     background: $cp-pink-gradient;
 
@@ -93,7 +84,6 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    // background-color: blue;
     background: $cp-blue-gradient;
     border-radius: 50%;
 
