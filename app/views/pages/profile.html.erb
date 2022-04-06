@@ -4,8 +4,19 @@
     - Autre page pour modification des datas + bio
     - Ajouter les cards faites sur index -> les 3 meilleurs pulses + 3 categories prefs</p>
 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-<%= console %>
 
 
 
+
+<p>form profile pic</p>
+
+    <%#= simple_form_for(current_user) do |f| %>
+        <%#= f.input :photo, as: :file %>
+        <%#= f.button :submit, "Sign up", class:"btn-sign" %>
+    <%# end %>
+
+
+
+
+<p>image cloudi ci dessous</p>
 <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
