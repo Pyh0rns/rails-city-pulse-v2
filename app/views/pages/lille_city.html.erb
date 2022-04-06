@@ -10,45 +10,94 @@
 </div>
 
 <div class="lille-city-bg-black">
-  <div class="container container-categories">
-    <h2>Thématiques les plus populaires</h2>
-    <%# ajouter le nb de pulse par category? %>
-    <div class="top-categories">
-      <% top = @categories.sort_by { |category| category.pulses.count } %>
-      <% top.reverse.first(3).each do |category| %>
-        <div class="top-category">
-          <p> <%= category.name %> </p>
-          <p> <%= sanitize category.picto %> </p>
+  <div class="container">
+    <div class="container-categories">
+      <h2>Thématiques les plus populaires</h2>
+      <%# ajouter le nb de pulse par category? %>
+      <div class="top-categories">
+        <% top = @categories.sort_by { |category| category.pulses.count } %>
+        <% top.reverse.first(3).each do |category| %>
+          <div class="top-category">
+            <p> <%= category.name %> </p>
+            <p> <%= sanitize category.picto %> </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container-top-pulses">
+      <h2> Pulses les plus populaires </h2>
+      <div class="top-pulses pb-3">
+
+      <%# reprendre les cards de l'index une fois finalisées %>
+        <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
+        <% top.reverse.first(3).each do |pulse| %>
+          <div class="pulse-content">
+
+            <div class="pulse-content-left">
+            <% if pulse.user.photo.attached? %>
+              <%= cl_image_tag pulse.user.photo.key, class:"profile-pic" %>
+            <% else %>
+              <i class="fas fa-user-circle" id="user-picto"></i>
+            <% end %>
+
+              <div class="pulse-nickname-and-categories">
+                <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
+                <div class="pulses-categories d-flex">
+                  <% pulse.categories.limit(3).each do |category| %>
+                    <p class="me-2"> <%= sanitize category.picto %> </p>
+                  <% end %>
+                </div>
+
+                <div class="pulse-delete">
+                  <% if current_user == pulse.user %>
+                    <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Supprimer?" } do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <p><%= pulse.pulse_content %></p>
+
+              <div class="d-flex">
+                <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
+              </div>
+            </div>
+
+            <%# # ------ div (partial) qui se refresh quand on like ------ %>
+            <%= render "pulses/pulse_content_right", pulse: pulse %>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+
+    <div class="container-sondage">
+      <div class="sondages">
+        <h2>Sondages</h2>
+        <div class="sondage-content border">
+          <h3>Souhaiteriez-vous que ?</h3>
+          <p>Afin de faire ceci cela</p>
         </div>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="container container-sondage">
-    <div class="sondages">
-      <h2>Sondages</h2>
-      <div class="sondage-content border">
-        <h3>Souhaiteriez-vous que ?</h3>
-        <p>Afin de faire ceci cela</p>
-      </div>
-
-      <div class="sondage-content border">
-        <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
-        <p>Afin de faire ceci cela</p>
+        <div class="sondage-content border">
+          <h3>Parmi ces trois projets retenus, lequel préférez vous ?</h3>
+          <p>Afin de faire ceci cela</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class=" container container-top-pulses">
-    <h2> Pulses les plus populaires </h2>
-    <div class="top-pulses pb-5">
-
-    <%# reprendre les cards de l'index une fois finalisées %>
-      <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
-      <% top.reverse.first(3).each do |pulse| %>
-        <h3> <%= pulse.user.nickname %> </h3>
-        <p> <%= pulse.pulse_content %> </p>
-      <% end %>
+    <div class="container-projets-realises">
+      <div class="projets-realises py-5">
+        <h2>Projets réalisés</h2>
+        <div class="projet-content">
+          <h3>Souhaiteriez-vous que ?</h3>
+          <p>Afin de faire ceci cela</p>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
