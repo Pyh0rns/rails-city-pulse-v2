@@ -41,7 +41,7 @@
 
   <div class=" container container-top-pulses">
     <h2> Pulses les plus populaires </h2>
-    <div class="top-pulses">
+    <div class="top-pulses pb-5">
 
     <%# reprendre les cards de l'index une fois finalisées %>
       <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
@@ -51,10 +51,4 @@
       <% end %>
     </div>
   </div>
-</div>
-
-
-<div class="container container-autres">
-  <h3>Autre chose?</h3>
-  <p>???</p>
 </div>
