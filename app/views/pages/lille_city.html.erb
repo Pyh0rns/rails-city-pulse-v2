@@ -32,42 +32,8 @@
       <%# reprendre les cards de l'index une fois finalisées %>
         <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
         <% top.reverse.first(3).each do |pulse| %>
-          <div class="pulse-content">
+        <%= render "pulses/pulse", pulse: pulse %>
 
-            <div class="pulse-content-left">
-            <% if pulse.user.photo.attached? %>
-              <%= cl_image_tag pulse.user.photo.key, class:"profile-pic" %>
-            <% else %>
-              <i class="fas fa-user-circle" id="user-picto"></i>
-            <% end %>
-
-              <div class="pulse-nickname-and-categories">
-                <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
-                <div class="pulses-categories d-flex">
-                  <% pulse.categories.limit(3).each do |category| %>
-                    <p class="me-2"> <%= sanitize category.picto %> </p>
-                  <% end %>
-                </div>
-
-                <div class="pulse-delete">
-                  <% if current_user == pulse.user %>
-                    <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Supprimer?" } do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-              <p><%= pulse.pulse_content %></p>
-
-              <div class="d-flex">
-                <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
-              </div>
-            </div>
-
-            <%# # ------ div (partial) qui se refresh quand on like ------ %>
-            <%= render "pulses/pulse_content_right", pulse: pulse %>
-
-          </div>
         <% end %>
       </div>
     </div>
