@@ -38,6 +38,5 @@
 
 <%# regler ce pb de flash %>
   <% unless user_signed_in? %>
-    <%= flash[:notice] = link_to "Se connecter pour voter ou pulser!", new_user_session_path%>
+    <%= flash.now[:notice] = link_to "Se connecter pour voter ou pulser!", new_user_session_path%>
   <% end %>
-</div>
