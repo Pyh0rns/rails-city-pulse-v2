@@ -4,8 +4,14 @@
       <div class="pulse-content">
 
         <div class="pulse-content-left">
-        <%# mettre la photo avatar ici avec les bonnes classes css et si pas de photo = photo user-picto %>
+        <%# faire en sorte que la photo soit pas déformée %>
+
+        <% if pulse.user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class:"profile-pic" %>
+        <% else %>
           <i class="fas fa-user-circle" id="user-picto"></i>
+        <% end %>
+
           <div class="pulse-nickname-and-categories d-flex">
             <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
             <div class="pulses-categories d-flex ps-5">

@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   get 'pages/profile'
   get 'pages/lille_city'
   get 'pages/infos'
+
+
+  resources :users, only: [:update]
 end
