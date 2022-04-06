@@ -1,8 +1,8 @@
 <div class="bg-body-index">
   <div class="container container-index-pulses">
     <% @pulses.reverse.each do |pulse| %>
+        <%# ------------------ la partial est ici !! ----------------- %>
         <%= render "pulse", pulse: pulse %>
-
     <% end %>
   </div>
 </div>

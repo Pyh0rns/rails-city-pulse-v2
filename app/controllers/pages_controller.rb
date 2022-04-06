@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def profile
     # profile_params
+    @pulses = Pulse.all
+    @categories = Category.all
   end
 
   def lille_city
