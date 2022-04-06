@@ -14,7 +14,7 @@
     <div class="user-infos">
       <div class="bio">
       <h3 class='text-white my-5'> La bio de l'utilisateur sera ici ! </h3>
-      </div>
+    </div>
 
       <div class="pulses-top">
         <h3 class='text-white'> Tes meilleurs Pulses :</h3>
@@ -30,24 +30,24 @@
           <%# # trié par fake_votes et non vrais favoris. changer par pulse.favorites.count au besoin %>
           <% top2.reverse.each do |top| %>
             <div class="pulses-profile d-flex">
-                <div class='icone-profile'>
-                  <% top.categories.each do |category| %>
-                    <div class='best-icone'><%= sanitize category.picto %></div>
-                  <% end %>
-                </div>
-                <div class="pulse-profile-description">
-                  <p><%= top.pulse_content %> : <strong><%= top.favorites.length + (top.favorites.count.nil? ? 0 : top.favorites.count) %> 💙 </strong> </p>
-                </div>
+              <div class='icone-profile'>
+                <% top.categories.each do |category| %>
+                  <div class='best-icone'><%= sanitize category.picto %></div>
+                <% end %>
+              </div>
+              <div class="pulse-profile-description">
+                <p><%= top.pulse_content %> : <strong><%= top.favorites.length + (top.favorites.count.nil? ? 0 : top.favorites.count) %> 💙 </strong> </p>
+              </div>
             </div>
           <% end %>
         <% end %>
       </div>
-
     </div>
-  </div>
 
-  <div class="d-grid">
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <%= link_to 'Modifier mon profil', edit_user_path(current_user)%>
+
+    <div class="d-grid">
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-logout" %>
+      <%= link_to 'Modifier mon profil', edit_user_path(current_user)%>
+    </div>
   </div>
 </div>
