@@ -10,9 +10,9 @@
 
 <p>form profile pic</p>
 
-    <%#= simple_form_for @user, method: :patch do |f| %>
-        <%#= f.input :photo, as: :file %>
-        <%#= f.button :submit, "Sign up", class:"btn-sign" %>
+    <%#= simple_form_for @current_user, url: user_path(current_user), method: :patch do |f| %>
+      <%#= f.input :photo, as: :file %>
+      <%#= f.button :submit, "Sign up", class:"btn-sign" %>
     <%# end %>
 
 

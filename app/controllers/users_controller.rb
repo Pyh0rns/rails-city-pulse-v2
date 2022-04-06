@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
   def update
     # @user = User.find(params[:id])
-    @user = current_user
-    @user.update(user_params)
-    redirect_to pages_profile_path(@user)
+    @current_user = current_user
+    @current_user.update(user_params)
+    redirect_to pages_profile_path(@current_user)
     # pas sur du path
   end
 
