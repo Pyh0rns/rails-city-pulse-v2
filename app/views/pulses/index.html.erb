@@ -14,9 +14,9 @@
 
           <div class="pulse-nickname-and-categories">
             <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
-            <div class="pulses-categories d-flex ps-5">
-              <% pulse.categories.limit(3).each do |category| %>
-                <p class="mx-2"> <%= sanitize category.picto %> </p>
+            <div class="pulses-categories d-flex">
+              <% pulse.categories.each do |category| %>
+                <p class="me-2"> <%= sanitize category.picto %> </p>
               <% end %>
             </div>
 
