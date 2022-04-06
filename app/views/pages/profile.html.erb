@@ -1,7 +1,12 @@
 <div class="bg-body-profile">
   <div class="container container-profile">
     <div class='d-flex align-items-center'>
-      <div> <%= cl_image_tag current_user.photo.key, class: 'avatar-profile mx-3'%> </div>
+
+      <% unless current_user.photo.key.nil? %>
+        <div>
+          <%=cl_image_tag current_user.photo.key, class: 'avatar-profile mx-3'%>
+        </div>
+      <% end %>
       <div class='text-white'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
     </div>
 
