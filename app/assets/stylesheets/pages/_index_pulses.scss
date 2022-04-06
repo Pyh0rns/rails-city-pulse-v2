@@ -53,6 +53,14 @@
   right: 3vh;
 }
 
+
+.pulse-nickname-and-categories {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 8vh;
+
+}
+
 .pulse-user-nickname {
   padding-left: 10%;
   background: $cp-pink-gradient;
