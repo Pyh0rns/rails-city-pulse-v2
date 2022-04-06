@@ -1,6 +1,8 @@
 .bg-body-index { // test bg color
 //   background-color: lightgray;
   background: $cp-black;
+    // pour que le bg reste de la même couleur si recherche sans résultats
+    padding-bottom: 75vh;
  }
 
 .container-index-pulses {
