@@ -7,7 +7,7 @@
         <%# faire en sorte que la photo soit pas déformée %>
 
         <% if pulse.user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class:"profile-pic" %>
+          <%= cl_image_tag pulse.user.photo.key, class:"profile-pic" %>
         <% else %>
           <i class="fas fa-user-circle" id="user-picto"></i>
         <% end %>
