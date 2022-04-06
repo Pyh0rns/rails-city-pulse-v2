@@ -4,8 +4,8 @@
     - Autre page pour modification des datas + bio
     - Ajouter les cards faites sur index -> les 3 meilleurs pulses + 3 categories prefs</p>
 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-
-
+<%= link_to 'Modifier mon profil', edit_user_path(current_user)%>
+<%= console %>
 
 
 <p>form profile pic</p>
@@ -22,4 +22,4 @@
 
 
 <p>image cloudi ci dessous</p>
-<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fill %>
