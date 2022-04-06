@@ -15,13 +15,11 @@
         <%#= f.button :submit, "Sign up", class:"btn-sign" %>
     <%# end %>
 
+ <%# user PATCH  /users/:id(.:format)           users#update %>
+ <%# <%= simple_form_for @photographer, :url => savenew_photographers_path, :method => :post ... # etc %>
+
 
 
 
 <p>image cloudi ci dessous</p>
 <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
-
-                                    <%# user PATCH  /users/:id(.:format)           users#update %>
-
-
-<%# <%= simple_form_for @photographer, :url => savenew_photographers_path, :method => :post ... # etc %>

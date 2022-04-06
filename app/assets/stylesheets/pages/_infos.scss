@@ -59,3 +59,23 @@
   }
 
 }
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .image {
+
+    #hooked {
+      height: 200px;
+      margin: 5vh 3vh;
+      opacity: 0.7;
+    }
+
+    #discuss {
+      height: 200px;
+      margin: 5vh 3vh;
+
+    }
+
+  }
+}
