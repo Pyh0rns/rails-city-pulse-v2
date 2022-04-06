@@ -4,8 +4,6 @@
       <div class="pulse-content">
 
         <div class="pulse-content-left">
-        <%# faire en sorte que la photo soit pas déformée %>
-
         <% if pulse.user.photo.attached? %>
           <%= cl_image_tag pulse.user.photo.key, class:"profile-pic" %>
         <% else %>
@@ -15,7 +13,7 @@
           <div class="pulse-nickname-and-categories">
             <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
             <div class="pulses-categories d-flex">
-              <% pulse.categories.each do |category| %>
+              <% pulse.categories.limit(3).each do |category| %>
                 <p class="me-2"> <%= sanitize category.picto %> </p>
               <% end %>
             </div>
