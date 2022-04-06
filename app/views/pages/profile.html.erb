@@ -18,8 +18,6 @@
  <%# user PATCH  /users/:id(.:format)           users#update %>
  <%# <%= simple_form_for @photographer, :url => savenew_photographers_path, :method => :post ... # etc %>
 
-
-
-
-<p>image cloudi ci dessous</p>
-<%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fill %>
+<% if current_user.photo.attached? %>
+<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
