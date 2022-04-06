@@ -1,0 +1,27 @@
+.bg-body-profile {
+  background: $cp-black;
+  // pour que le bg reste de la même couleur si recherche sans résultats
+  padding-bottom: 75vh;
+}
+
+.container-profile {
+  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-top: 5vh;
+}
+
+.avatar-profile {
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.pulses-profile {
+  color: whitesmoke;
+  border: 2px solid;
+  border-color: whitesmoke;
+  border-radius: 4px;
+  /* vertical | horizontal */
+  margin: 5vh 0;
+  padding: 2vh;
+  position: relative;
+}
