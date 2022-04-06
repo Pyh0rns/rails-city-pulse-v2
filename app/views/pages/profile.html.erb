@@ -46,15 +46,3 @@
     <%= link_to 'Modifier mon profil', edit_user_path(current_user)%>
   </div>
 </div>
-
-    <%#= simple_form_for @current_user, url: user_path(current_user), method: :patch do |f| %>
-      <%#= f.input :photo, as: :file %>
-      <%#= f.button :submit, "Sign up", class:"btn-sign" %>
-    <%# end %>
-
- <%# user PATCH  /users/:id(.:format)           users#update %>
- <%# <%= simple_form_for @photographer, :url => savenew_photographers_path, :method => :post ... # etc %>
-
-<%# <% if current_user.photo.attached? %>
-<%# <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
-<%# <% end %>
