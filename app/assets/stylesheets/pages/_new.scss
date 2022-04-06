@@ -1,3 +1,23 @@
-.form-new {
-  margin-top: 5vh;
+// .form-new {
+//   margin-top: 5vh;
+// }
+
+.bg-form {
+  background-color: $cp-black;
+  color: whitesmoke;
+  padding-top: 5vh;
+  padding-bottom: 25vh;
+
+  h1 {
+    padding-bottom: 3vh ;
+  }
+}
+
+.btn-new-pulse {
+  background: $cp-pink-gradient;
+  color: whitesmoke;
+  border-radius: 10px;
+  margin-top: 2vh;
+  padding: 2vh 3vh;
+
 }

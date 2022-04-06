@@ -5,7 +5,7 @@
 
         <div class="pulse-content-left">
           <i class="fas fa-user-circle" id="user-picto"></i>
-          <div class="pulse-nickname-and-categories d-flex align-items-center">
+          <div class="pulse-nickname-and-categories d-flex">
             <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
             <div class="pulses-categories d-flex ps-5">
               <% pulse.categories.each do |category| %>
@@ -15,17 +15,14 @@
 
             <div class="pulse-delete">
               <% if current_user == pulse.user %>
-                <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Are you sure?" } do %>
+                <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Supprimer?" } do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
               <% end %>
             </div>
-
-
           </div>
           <p><%= pulse.pulse_content %></p>
 
-          <%# revoir le css de cette partie pour enlever bootstrap %>
           <div class="d-flex">
             <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
           </div>
@@ -40,6 +37,7 @@
 </div>
 
 <%# regler ce pb de flash %>
-<% unless user_signed_in? %>
-  <%= flash[:alert] = link_to "Se connecter pour voter ou pulser!", new_user_session_path %>
-<% end %>
+  <% unless user_signed_in? %>
+    <%= flash[:notice] = link_to "Se connecter pour voter ou pulser!", new_user_session_path%>
+  <% end %>
+</div>

@@ -1,9 +1,10 @@
 <div class="form-new">
   <%= simple_form_for(@pulse) do |f| %>
-    <%= f.input :pulse_content %>
+    <%= f.input :pulse_content, as: :text %>
+    <div class="w-50 my-5">
     <%= f.association :categories, include_hidden: false, required: true %>
-
+    </div>
     <%# -------- changer le bouton --------- %>
-    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit class: "btn-new-pulse" %>
   <% end %>
 </div>
