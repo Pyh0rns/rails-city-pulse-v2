@@ -29,7 +29,7 @@
             <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
               <% if user_signed_in? %>
                   <% if pulse.user != current_user %>
-                    <p class="pulse-date text-danger" style="cursor:pointer;"> <small> Signaler <i class="fas fa-flag"></i></small></p>
+                    <p class="pulse-date text-danger mb-0 mt-0" style="cursor:pointer;"> <small> <small> Signaler <i class="fas fa-flag"></i></small></small></p>
                   <% end %>
               <% end %>
           </div>
