@@ -2,6 +2,19 @@
   background: black;
   justify-content: space-between;
   padding: 2vh;
+  position: relative;
+
+}
+
+#navbar-city {
+  position: absolute ;
+  top: 40%;
+  right: 25%;
+  font-style: italic;
+  background: $cp-pink-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container-top-navbar {
