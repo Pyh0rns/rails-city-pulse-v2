@@ -16,11 +16,10 @@
             </div>
 
             <div class="pulse-delete">
+
               <% if current_user == pulse.user%>
-                <% if current_user.nickname == "Py" %>
-                  <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Supprimer?" } do %>
+                <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Supprimer?" } do %>
                   <i class="fas fa-trash"></i>
-                  <% end %>
                 <% end %>
               <% end %>
             </div>
