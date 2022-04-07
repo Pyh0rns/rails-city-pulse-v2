@@ -3,22 +3,15 @@
     <div class="container-profile">
       <div class='d-flex align-items-center'>
 
-
-            <%# <i class="fas fa-pen"></i> %>
-
-
-
-
         <% unless current_user.photo.key.nil? %>
-          <div>
-            <%=cl_image_tag current_user.photo.key, class: 'avatar-profile mx-3'%>
+          <div class="mx-3">
+            <%=cl_image_tag current_user.photo.key, crop: :fit, class: "avatar-profile"%>
           </div>
         <% end %>
         <div class='text-white'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
       </div>
 
-
-      <%# ------------ faire une partial ------------ %>
+      <%# ------------ form update photo et bio ------------ %>
 
       <div data-controller = "addinfos">
 
