@@ -18,56 +18,46 @@
       </div>
 
 
-<%# ------------ faire une partial ------------ %>
+      <%# ------------ faire une partial ------------ %>
 
-<div data-controller = "addinfos">
+      <div data-controller = "addinfos">
 
-  <div class="add-pic-bio">
-    <p data-action="click->addinfos#displayformpic" ><i class="fas fa-pen"></i>ajouter/modifier sa photo de profil</p>
-    <p data-action="click->addinfos#displayformbio" ><i class="fas fa-pen"></i>ajouter/modifier sa bio</p>
-  </div>
+        <div class="add-pic-bio">
+          <p data-action="click->addinfos#displayformpic" ><i class="fas fa-pen"></i>ajouter/modifier sa photo de profil</p>
+          <p data-action="click->addinfos#displayformbio" ><i class="fas fa-pen"></i>ajouter/modifier sa bio</p>
+        </div>
 
-  <div data-addinfos-target="formaddpic" class="form-add-pic my-5 text-white w-50 d-none">
-    <%= simple_form_for(current_user) do |f| %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: "btn-new-pulse" %>
-    <% end %>
-  </div>
+        <div data-addinfos-target="formaddpic" class="form-add-pic my-5 text-white w-50 d-none">
+          <%= simple_form_for(current_user) do |f| %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: "btn-new-pulse" %>
+          <% end %>
+        </div>
 
-  <div data-addinfos-target="formaddbio" class=" form-add-bio my-5 text-white d-none">
-    <%= simple_form_for(current_user) do |f| %>
-      <%= f.input :bio, as: :text %>
-      <%= f.submit class: "btn-new-pulse" %>
-    <% end %>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
+        <div data-addinfos-target="formaddbio" class=" form-add-bio my-5 text-white d-none">
+          <%= simple_form_for(current_user) do |f| %>
+            <%= f.input :bio, as: :text %>
+            <%= f.submit class: "btn-new-pulse" %>
+          <% end %>
+        </div>
+      </div>
 
 
       <div class="user-infos">
         <div class="bio my-5">
-        <h3 class='text-white'> La bio de l'utilisateur sera ici ! </h3>
-        <p class='text-white'> <small> fausse = Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae. </small></p>
+        <h3> Bio :</h3>
 
-        <%# --------------- test display bio ----------%>
-        <% unless current_user.bio.nil? %>
-          <p class='text-white'> <small>vraie = <%= current_user.bio %> </small></p>
+        <% if current_user.bio.nil? %>
+          <p> <small>N'hésite pas à rajouter une petite bio !</small> </p>
+        <% else %>
+          <p> <small> <%= current_user.bio %> </small></p>
         <% end %>
       </div>
       <%# --------------- fin test display bio ----------%>
 
 
       <div class="pulses-top">
-        <h3 class='text-white'> Tes meilleurs Pulses :</h3>
+        <h3> Tes meilleurs Pulses :</h3>
         <% unless current_user.pulses.nil? %>
           <% if current_user.pulses.length == 1 %>
             <% limit = 1 %>
