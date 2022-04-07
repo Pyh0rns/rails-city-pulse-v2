@@ -2,7 +2,7 @@
   background: $cp-black;
   // pour que la page soit noire jusqu'en bas si jamais pulse donc pas de top 3
   // A changer plus tard
-  padding-bottom: 40vh;
+  padding-bottom: 25vh;
 }
 
 .container-profile {
@@ -24,12 +24,6 @@
   }
 }
 
-
-
-
-
-
-
 .pulses-profile {
   color: whitesmoke;
   border: 2px solid;
@@ -49,4 +43,28 @@
   margin-bottom: 5vh;
   padding: 1vh 3vh;
 
+}
+
+.bio {
+  color: whitesmoke;
+  padding-bottom: 5vh;
+
+  h3 {
+    background: $cp-pink-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+.pulses-top {
+
+  h3 {
+    background: $cp-pink-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
