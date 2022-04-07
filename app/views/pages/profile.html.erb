@@ -3,6 +3,12 @@
     <div class="container-profile">
       <div class='d-flex align-items-center'>
 
+
+            <%# <i class="fas fa-pen"></i> %>
+
+
+
+
         <% unless current_user.photo.key.nil? %>
           <div>
             <%=cl_image_tag current_user.photo.key, class: 'avatar-profile mx-3'%>
@@ -11,21 +17,40 @@
         <div class='text-white'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
       </div>
 
-<%# ---------------------------- test edit update --------------------------------------%>
-      <div class="my-5 text-white">
-        <%= simple_form_for(current_user) do |f| %>
-          <%= f.input :photo, as: :file %>
-          <%= f.submit class: "btn-new-pulse" %>
-        <% end %>
-      </div>
 
-      <div class="my-5 text-white">
-        <%= simple_form_for(current_user) do |f| %>
-          <%= f.input :bio, as: :text %>
-          <%= f.submit class: "btn-new-pulse" %>
-        <% end %>
-      </div>
-      <%# -------------------------- fin test edit update ------------------------------------%>
+<%# ------------ faire une partial ------------ %>
+
+<div data-controller = "addinfos">
+
+  <div class="add-pic-bio">
+    <p data-action="click->addinfos#displayformpic" ><i class="fas fa-pen"></i>ajouter/modifier sa photo de profil</p>
+    <p data-action="click->addinfos#displayformbio" ><i class="fas fa-pen"></i>ajouter/modifier sa bio</p>
+  </div>
+
+  <div data-addinfos-target="formaddpic" class="form-add-pic my-5 text-white w-50 d-none">
+    <%= simple_form_for(current_user) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn-new-pulse" %>
+    <% end %>
+  </div>
+
+  <div data-addinfos-target="formaddbio" class=" form-add-bio my-5 text-white d-none">
+    <%= simple_form_for(current_user) do |f| %>
+      <%= f.input :bio, as: :text %>
+      <%= f.submit class: "btn-new-pulse" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
       <div class="user-infos">
@@ -41,23 +66,23 @@
       <%# --------------- fin test display bio ----------%>
 
 
-        <div class="pulses-top">
-          <h3 class='text-white'> Tes meilleurs Pulses :</h3>
-          <% unless current_user.pulses.nil? %>
-            <% if current_user.pulses.length == 1 %>
-              <% limit = 1 %>
-            <% elsif current_user.pulses.length == 2 %>
-              <% limit = 2 %>
-            <% else %>
-              <% limit = 3 %>
-            <% end %>
-            <% top2 = current_user.pulses.limit(limit).sort_by { |pulse| pulse.favorites.count } %>
-            <% top2.reverse.each do |pulse| %>
-              <%# ------------------ la partial est ici !! ----------------- %>
-              <%= render "pulses/pulse", pulse: pulse %>
-            <% end %>
+      <div class="pulses-top">
+        <h3 class='text-white'> Tes meilleurs Pulses :</h3>
+        <% unless current_user.pulses.nil? %>
+          <% if current_user.pulses.length == 1 %>
+            <% limit = 1 %>
+          <% elsif current_user.pulses.length == 2 %>
+            <% limit = 2 %>
+          <% else %>
+            <% limit = 3 %>
           <% end %>
-        </div>
+          <% top2 = current_user.pulses.limit(limit).sort_by { |pulse| pulse.favorites.count } %>
+          <% top2.reverse.each do |pulse| %>
+            <%# ------------------ la partial est ici !! ----------------- %>
+            <%= render "pulses/pulse", pulse: pulse %>
+          <% end %>
+        <% end %>
+      </div>
 
       <div class="d-grid">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-logout" %>
