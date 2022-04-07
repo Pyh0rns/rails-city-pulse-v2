@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @current_user = current_user
     @current_user.update(user_params)
     redirect_to pages_profile_path(@current_user)
-    # pas sur du path
+    # pas sur du path...
   end
 
   private
