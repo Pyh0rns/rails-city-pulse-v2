@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'pages/lille_city'
   get 'pages/infos'
 
-  # resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update]
 end

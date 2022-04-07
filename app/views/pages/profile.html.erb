@@ -11,7 +11,34 @@
         <div class='text-white'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
       </div>
 
+<%# ---------------------------- test edit update --------------------------------------%>
+      <div class="my-5 text-white">
+        <%= simple_form_for(current_user) do |f| %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: "btn-new-pulse" %>
+        <% end %>
+      </div>
 
+      <div class="my-5 text-white">
+        <%= simple_form_for(current_user) do |f| %>
+          <%= f.input :bio, as: :text %>
+          <%= f.submit class: "btn-new-pulse" %>
+        <% end %>
+      </div>
+      <%# -------------------------- fin test edit update ------------------------------------%>
+
+
+      <div class="user-infos">
+        <div class="bio my-5">
+        <h3 class='text-white'> La bio de l'utilisateur sera ici ! </h3>
+        <p class='text-white'> <small> fausse = Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae. </small></p>
+
+        <%# --------------- test display bio ----------%>
+        <% unless current_user.bio.nil? %>
+          <p class='text-white'> <small>vraie = <%= current_user.bio %> </small></p>
+        <% end %>
+      </div>
+      <%# --------------- fin test display bio ----------%>
 
 
         <div class="pulses-top">
@@ -31,7 +58,6 @@
             <% end %>
           <% end %>
         </div>
-      </div>
 
       <div class="d-grid">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-logout" %>
