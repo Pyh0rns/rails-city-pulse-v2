@@ -26,9 +26,10 @@
     </div>
 
     <%# changer le nom des classes et le css %>
-    <div class="container-categories d-flex justify-content-center">
-      <div class="top-categories pt-5">
+    <div class="container-categories">
+      <div class="top-categories flex-column pt-5">
         <h2>Il y a <%= @users.count %> utilisateurs à Lille !</h2>
+        <p class="d-flex justify-content-center">Avec <%= @pulses.count %> Pulses et <%= @favorites.count %> likes </p>
       </div>
     </div>
 
