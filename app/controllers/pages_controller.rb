@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def infos
+
   end
 
   # private
