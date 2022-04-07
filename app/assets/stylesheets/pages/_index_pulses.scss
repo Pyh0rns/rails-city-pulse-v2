@@ -5,9 +5,13 @@
   color: whitesmoke;
   text-shadow: 1px;
 
+  h2 {
+    padding-top: 3vh;
+  }
+
   .cross {
     position: absolute;
-    top: 2vh;
+    top: 1vh;
     right: 3vh;
     cursor: pointer;
   }
