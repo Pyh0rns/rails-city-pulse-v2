@@ -27,7 +27,7 @@
 
     <%# changer le nom des classes et le css %>
     <div class="container-categories">
-      <div class="top-categories flex-column pt-5">
+      <div class="top-categories flex-column pt-5 pb-3">
         <h2>Il y a <%= @users.count %> utilisateurs à Lille !</h2>
         <p class="d-flex justify-content-center">Avec <%= @pulses.count %> Pulses et <%= @favorites.count %> likes </p>
       </div>
@@ -47,7 +47,8 @@
 
     <div class="container-sondage">
       <div class="sondages pb-3">
-        <h2>Sondages</h2>
+        <h2 class="mb-0 pb-0" >Sondages</h2>
+        <p class="text-center font-italic pt-0 mt-0"> <small>A venir....</small></p>
         <div class="sondage-content border">
           <h3>Souhaiteriez-vous que la ville puisse vous proposer des sondages ?</h3>
           <div class="d-flex">
@@ -72,8 +73,10 @@
       <div class="projets-realises py-5">
         <h2>Projets réalisés</h2>
         <div class="projet-content pb-5">
-          <h3>Les projets réalisés grâce à City Pulse</h3>
-          <p>Voici la liste</p>
+          <h3 class="text-center mb-5">Les projets réalisés grâce à City Pulse</h3>
+          <p class="text-center mb-0 pb-0">Voici la liste</p>
+          <p class="text-center pb-5 pt-0 mt-0"> <small>A venir....</small></p>
+
         </div>
       </div>
     </div>
