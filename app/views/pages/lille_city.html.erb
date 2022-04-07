@@ -34,11 +34,12 @@
     </div>
 
     <div class="container-top-pulses">
-      <h2> Pulses les plus populaires </h2>
-      <div class="top-pulses pb-3">
+      <h2 class="pb-3"> Pulses les plus populaires </h2>
+      <div class="top-pulses pb-5">
 
         <% top = @pulses.sort_by { |pulse| pulse.favorites.count } %>
         <% top.reverse.first(3).each do |pulse| %>
+        <p class="text-center"> <small> Plus que <%= 1000 - pulse.favorites.count %> likes avant de soumettre ce Pulse à la mairie! <i class="fas fa-arrow-down"></i></small></p>
         <%# ------------------ la partial est ici !! ----------------- %>
           <%= render "pulses/pulse", pulse: pulse %>
         <% end %>
