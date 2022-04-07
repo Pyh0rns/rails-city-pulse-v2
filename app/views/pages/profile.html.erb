@@ -8,7 +8,7 @@
             <%=cl_image_tag current_user.photo.key, crop: :fit, class: "avatar-profile"%>
           </div>
         <% end %>
-        <div class='text-white'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
+        <div class='text-white text-center'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
       </div>
 
       <%# ------------ form update photo et bio ------------ %>
@@ -37,7 +37,7 @@
 
 
       <div class="user-infos">
-        <div class="bio my-5">
+        <div class="bio mt-5 mb-3">
         <h3> Bio :</h3>
 
         <% if current_user.bio.nil? %>
