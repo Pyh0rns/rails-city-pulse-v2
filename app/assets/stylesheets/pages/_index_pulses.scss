@@ -1,3 +1,21 @@
+.banner-index {
+  background: $cp-pink-gradient;
+  margin-bottom: 0;
+  position: relative;
+  color: whitesmoke;
+  text-shadow: 1px;
+
+  h2 {
+    padding-top: 3vh;
+  }
+
+  .cross {
+    position: absolute;
+    top: 1vh;
+    right: 3vh;
+    cursor: pointer;
+  }
+}
 
 .bg-body-index {
     background: $cp-black;
