@@ -28,7 +28,9 @@
           <div class="d-flex flex-column">
             <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
               <% if user_signed_in? %>
-                <p class="pulse-date text-danger" style="cursor:pointer;"> <small> Signaler <i class="fas fa-flag"></i></small></p>
+                  <% if pulse.user != current_user %>
+                    <p class="pulse-date text-danger" style="cursor:pointer;"> <small> Signaler <i class="fas fa-flag"></i></small></p>
+                  <% end %>
               <% end %>
           </div>
         </div>
