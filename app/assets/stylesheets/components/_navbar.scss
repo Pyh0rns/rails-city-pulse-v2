@@ -1,21 +1,21 @@
 .top-navbar {
-  background: black;
+  background: #ffffff;
   justify-content: space-between;
   padding: 2vh;
   position: relative;
 
 }
 
-#navbar-city {
-  position: absolute ;
-  top: 40%;
-  right: 25%;
-  font-style: italic;
-  background: $cp-pink-gradient;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+// #navbar-city {
+//   position: absolute ;
+//   top: 40%;
+//   right: 25%;
+//   font-style: italic;
+//   background: $cp-pink-gradient;
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
 
 .container-top-navbar {
   display: flex;
@@ -23,11 +23,11 @@
   align-items: center;
 
   h1 {
-    color: whitesmoke;
+    color: #000000;
   }
 
   i {
-    color: whitesmoke;
+    color: #000000;
     text-decoration: none !important;
     font-size: 4vh;
   }

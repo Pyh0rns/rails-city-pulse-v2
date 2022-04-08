@@ -1,5 +1,5 @@
 .down-navbar {
-  background: black;
+  background: #E7E7E7;
   width: 100%;
   padding: 2vh;
   position: fixed;
@@ -13,7 +13,7 @@
   position: relative;
 
   i {
-    color: whitesmoke;
+    color: #000000;
     text-decoration: none !important;
     font-size: 4vh;
   }
@@ -49,7 +49,7 @@
 
   #searchbar-text-field {
     width: 70%;
-    background-color: whitesmoke;
+    color: #000000;
     border-radius: 4px;
     padding: 0.5vh;
   }
@@ -57,7 +57,7 @@
 
 .btn-search {
   background: $cp-pink-gradient;
-  color: whitesmoke;
+  color: #000000;
   border-radius: 5px;
   padding: 0.5vh 3vh;
 }
