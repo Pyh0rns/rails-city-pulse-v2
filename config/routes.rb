@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   root to: 'pulses#index'
@@ -9,8 +8,9 @@ Rails.application.routes.draw do
   end
     resources :favorites, only: [:destroy]
 
-
   get 'pages/profile'
   get 'pages/lille_city'
   get 'pages/infos'
+
+  resources :users, only: [:edit, :update]
 end

@@ -1,3 +1,11 @@
+.container-infos-bg {
+  background-color: $cp-black;
+  color: whitesmoke;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+
+}
+
 
 .container-infos-title {
   display: flex;
@@ -20,17 +28,54 @@
 
 .infos-content-items {
   padding-bottom: 2vh;
+  border-bottom: solid 2px;
 
   h2 {
     padding: 2vh;
-  }
+    background: $cp-pink-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  }
 
   p {
     padding: 0 2vh ;
   }
+
 }
 
-// pour mettre un background color gris à un element sur 2
-.container-infos-content .infos-content-items:nth-child(2n) {
-  background-color: lightgray;
+.image {
+
+  #hooked {
+    width: 80%;
+    margin: 5vh 3vh;
+    opacity: 0.7;
+  }
+
+  #discuss {
+    width: 80%;
+    margin: 5vh 3vh;
+
+  }
+
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .image {
+
+    #hooked {
+      height: 200px;
+      margin: 5vh 3vh;
+      opacity: 0.7;
+    }
+
+    #discuss {
+      height: 200px;
+      margin: 5vh 3vh;
+
+    }
+
+  }
 }

@@ -1,40 +1,21 @@
+<div class="banner-index" data-controller="bannerindex" data-bannerindex-target="bannerdiv">
+  <div class="container p-3">
+    <h2 class="text-center"> Retrouvez toutes les idées proposées à Lille !</h2>
+    <div class="cross" data-bannerindex-target="cross" data-action="click->bannerindex#hide">
+        <i  class="fas fa-times"></i>
+    </div>
+  </div>
+</div>
+
 <div class="bg-body-index">
   <div class="container container-index-pulses">
     <% @pulses.reverse.each do |pulse| %>
-      <div class="pulse-content">
-
-        <div class="pulse-content-left">
-          <i class="fas fa-user-circle" id="user-picto"></i>
-          <div class="pulse-nickname-and-delete">
-            <h2 class="pulse-user-nickname"><%= pulse.user.nickname %> </h2>
-            <% if current_user == pulse.user %>
-              <%= link_to pulse_path(pulse) ,method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <p><%= pulse.pulse_content %></p>
-
-          <%# revoir le css de cette partie pour enlever bootstrap %>
-          <div class="d-flex">
-            <p class="pulse-date"><%= pulse.created_at.strftime("Pulsé le %d/%m/%Y")  %></p>
-            <div class="ms-5 pulse-categories d-flex">
-              <% pulse.categories.limit(3).each do |category| %>
-                <p class="ms-2"> <%= sanitize category.picto %> </p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <%# # ------ div (partial) qui se refresh quand on like ------ %>
-        <%= render "pulse_content_right", pulse: pulse %>
-
-      </div>
+        <%# ------------------ la partial est ici !! ----------------- %>
+        <%= render "pulse", pulse: pulse %>
     <% end %>
   </div>
 </div>
 
-<%# regler ce pb de flash %>
-<% unless user_signed_in? %>
-  <%= flash[:alert] = link_to "Se connecter pour voter ou pulser!", new_user_session_path %>
-<% end %>
+  <% unless user_signed_in? %>
+    <%= flash.now[:notice] = link_to "Se connecter pour voter ou pulser!", new_user_session_path%>
+  <% end %>

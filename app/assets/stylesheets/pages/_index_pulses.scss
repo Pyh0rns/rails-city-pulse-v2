@@ -1,28 +1,46 @@
-.bg-body-index { // test bg color
-//   background-color: lightgray;
-  background: $cp-black;
+.banner-index {
+  background: $cp-pink-gradient;
+  margin-bottom: 0;
+  position: relative;
+  color: whitesmoke;
+  text-shadow: 1px;
+
+  h2 {
+    padding-top: 3vh;
+  }
+
+  .cross {
+    position: absolute;
+    top: 1vh;
+    right: 3vh;
+    cursor: pointer;
+  }
+}
+
+.bg-body-index {
+    background: $cp-black;
+    // pour que le bg reste de la même couleur si recherche sans résultats
+    padding-bottom: 75vh;
  }
 
 .container-index-pulses {
-  margin-bottom: 8vh;
   padding: 5vh;
 }
 
 .pulse-content {
   color: whitesmoke;
-  border-top: 2px solid;
+  border: 2px solid;
   border-color: whitesmoke;
+  border-radius: 4px;
   /* vertical | horizontal */
-  margin: 3vh 0;
+  margin: 5vh 0;
   padding: 2vh;
-  // background-color: whitesmoke;
-  // border-radius: 8px;
   position: relative;
 }
 
 #user-picto {
   position: absolute;
-  top: -15px;
+  top: -10px;
   // top: 0;
   // transform: translateY(-50%);
   left: 0;
@@ -34,11 +52,28 @@
 
 }
 
-.pulse-nickname-and-delete {
-  display: flex;
-  justify-content: space-between;
+.profile-pic {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
+.pulse-delete {
+  position: absolute;
+  top: 2vh;
+  right: 3vh;
+}
+
+.pulse-nickname-and-categories {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5vh;
+
+}
 
 .pulse-user-nickname {
   padding-left: 10%;
@@ -58,7 +93,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   right: 0;
   transform: translateX(25%);
   #pulse-count {
@@ -72,7 +107,6 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    // background-color: red;
     border-radius: 50%;
     background: $cp-pink-gradient;
 
@@ -85,7 +119,6 @@
     font-size: 30px;
     padding: 2vh;
     color: whitesmoke;
-    // background-color: blue;
     background: $cp-blue-gradient;
     border-radius: 50%;
 

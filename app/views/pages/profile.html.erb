@@ -1,3 +1,76 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<div class="bg-body-profile">
+  <div class="container">
+    <div class="container-profile">
+      <div class='d-flex align-items-center'>
+
+        <% unless current_user.photo.key.nil? %>
+          <div class="mx-3">
+            <%=cl_image_tag current_user.photo.key, crop: :fit, class: "avatar-profile"%>
+          </div>
+        <% end %>
+        <div class='text-white text-center'><h1> Bienvenue sur City Pulse <%= current_user.nickname %> ! </h1></div>
+      </div>
+
+      <%# ------------ form update photo et bio ------------ %>
+
+      <div data-controller = "addinfos">
+
+        <div class="add-pic-bio">
+          <p data-action="click->addinfos#displayformpic" ><i class="fas fa-pen"></i>ajouter/modifier sa photo de profil</p>
+          <p data-action="click->addinfos#displayformbio" ><i class="fas fa-pen"></i>ajouter/modifier sa bio</p>
+        </div>
+
+        <div data-addinfos-target="formaddpic" class="form-add-pic my-5 text-white w-50 d-none">
+          <%= simple_form_for(current_user) do |f| %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: "btn-new-pulse" %>
+          <% end %>
+        </div>
+
+        <div data-addinfos-target="formaddbio" class=" form-add-bio my-5 text-white d-none">
+          <%= simple_form_for(current_user) do |f| %>
+            <%= f.input :bio, as: :text %>
+            <%= f.submit class: "btn-new-pulse" %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="user-infos">
+        <div class="bio mt-5 mb-3">
+        <h3> Bio :</h3>
+
+        <% if current_user.bio.nil? %>
+          <p> <small>N'hésite pas à rajouter une petite bio !</small> </p>
+        <% else %>
+          <p> <small> <%= current_user.bio %> </small></p>
+        <% end %>
+      </div>
+      <%# --------------- fin test display bio ----------%>
+
+
+      <div class="pulses-top">
+        <h3> Tes meilleurs Pulses :</h3>
+        <% unless current_user.pulses.nil? %>
+          <% if current_user.pulses.length == 1 %>
+            <% limit = 1 %>
+          <% elsif current_user.pulses.length == 2 %>
+            <% limit = 2 %>
+          <% else %>
+            <% limit = 3 %>
+          <% end %>
+          <% top2 = current_user.pulses.limit(limit).sort_by { |pulse| pulse.favorites.count } %>
+          <% top2.reverse.each do |pulse| %>
+            <%# ------------------ la partial est ici !! ----------------- %>
+            <%= render "pulses/pulse", pulse: pulse %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="d-grid">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-logout" %>
+        <%#= link_to 'Modifier mon profil', edit_user_path(current_user)%>
+      </div>
+    </div>
+  </div>
+</div>
